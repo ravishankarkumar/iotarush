@@ -10,7 +10,7 @@ const {
 const { Component } = React;
 
 const window = Dimensions.get('window');
-const uri = 'http://pickaface.net/includes/themes/clean/img/slide2.png';
+const uri = 'https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=50&h=50';
 
 const styles = StyleSheet.create({
   menu: {
@@ -42,8 +42,7 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = class Menu extends Component {
-
+export class Menu extends Component {
   render() {
     return (
       <ScrollView scrollsToTop={false} style={styles.menu}>
@@ -55,13 +54,11 @@ module.exports = class Menu extends Component {
         </View>
 
         <Text
-          onPress={() => this.props.onItemSelected('About')}
           style={styles.item}>
           About
         </Text>
 
         <Text
-          onPress={() => this.props.onItemSelected('Contacts')}
           style={styles.item}>
           Contacts
         </Text>

@@ -13,7 +13,7 @@ import {
 
 const SideMenu = require('react-native-side-menu');
 
-const Menu = require('../components/sidemenu');
+import {Menu} from'../components/sidemenu';
 
 class AppContent extends Component {
   render() {
@@ -36,7 +36,7 @@ class AppContent extends Component {
 
 export class App extends React.Component {
   render() {
-    const menu = <Menu navigator={navigator}/>;
+    const menu = <Menu/>;
 
     return (
       <SideMenu menu={menu}>
