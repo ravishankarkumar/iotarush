@@ -3,30 +3,32 @@ import {
     Navigator,
     Text,
     View,
-    StyleSheet
+    StyleSheet,
+    TouchableHighlight
 } from 'react-native';
 
 export class Home extends Component {
   constructor(){
     super();
-    propTypes = { 
-        title: PropTypes.string.isRequired, 
-        onForward: PropTypes.func.isRequired, 
-        onBack: PropTypes.func.isRequired, 
+    propTypes = {
+        title: PropTypes.string.isRequired,
+        onForward: PropTypes.func.isRequired,
+        onBack: PropTypes.func.isRequired,
     }}
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <Text>Current Scene: { this.props.title }</Text>
+        <TouchableHighlight onPress={this.props.onForward}>
+          <Text>
+            Tap me to load the next scene
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.props.onBack}>
+          <Text>
+            Tap me to go back
+          </Text>
+        </TouchableHighlight>
       </View>
     );
   }
