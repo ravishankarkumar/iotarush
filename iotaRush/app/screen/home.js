@@ -6,6 +6,7 @@ import {
     StyleSheet,
     TouchableHighlight
 } from 'react-native';
+import NavigationBar from 'react-native-navbar';
 
 export class Home extends Component {
   constructor(){
@@ -18,6 +19,9 @@ export class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <NavigationBar
+          title={{'title': "Nav Bar"}}
+          rightButton={{title: 'you click me!', handler: ()=>alert('hello!')}} />
         <Text>Current Scene: { this.props.title }</Text>
         <TouchableHighlight onPress={this.props.onForward}>
           <Text>
@@ -37,8 +41,6 @@ export class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {

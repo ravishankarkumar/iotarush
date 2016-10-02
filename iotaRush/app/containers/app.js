@@ -11,7 +11,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const SideMenu = require('react-native-side-menu');
+import SideMenu from 'react-native-side-menu';
+import NavigationBar from 'react-native-navbar';
 
 import {Menu} from'../components/sidemenu';
 import {Home} from '../screen/home';
@@ -23,26 +24,26 @@ export class App extends React.Component {
     return (
       <SideMenu menu={menu}>
         <Navigator
-          initialRoute={{ title: 'My Initial Scene', index: 0 }} 
-          renderScene={(route, navigator) => 
-            <Home title={route.title}  
+          initialRoute={{ title: 'My Initial Scene', index: 0 }}
+          renderScene={(route, navigator) =>
+            <Home title={route.title}
             // Function to call when a new scene should be displayed
-              onForward={ () => { 
-                  const nextIndex = route.index + 1; 
-                  navigator.push({ 
-                    title: 'Scene ' + nextIndex, 
-                    index: nextIndex, 
-                  }); 
+              onForward={ () => {
+                  const nextIndex = route.index + 1;
+                  navigator.push({
+                    title: 'Scene ' + nextIndex,
+                    index: nextIndex,
+                  });
                 }
-              }  
-              // Function to call to go back to the previous scene
-              onBack={() => { 
-                if (route.index > 0) { 
-                  navigator.pop(); 
-                } 
               }
-            } 
-            /> 
+              // Function to call to go back to the previous scene
+              onBack={() => {
+                if (route.index > 0) {
+                  navigator.pop();
+                }
+              }
+            }
+            />
           }
         />
       </SideMenu>
