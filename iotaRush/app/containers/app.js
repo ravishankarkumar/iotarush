@@ -9,9 +9,13 @@ import {
   Image,
   StatusBar,
   StyleSheet,
-} from 'react-native'
+} from 'react-native';
 
-export class App extends Component {
+const SideMenu = require('react-native-side-menu');
+
+const Menu = require('../components/sidemenu');
+
+class AppContent extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -29,6 +33,19 @@ export class App extends Component {
     );
   }
 }
+
+export class App extends React.Component {
+  render() {
+    const menu = <Menu navigator={navigator}/>;
+
+    return (
+      <SideMenu menu={menu}>
+        <AppContent/>
+      </SideMenu>
+    );
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
