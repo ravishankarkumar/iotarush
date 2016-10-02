@@ -10,7 +10,7 @@ const {
 const { Component } = React;
 
 const window = Dimensions.get('window');
-const uri = 'https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=50&h=50';
+const uri = 'https://placeholdit.imgix.net/~text?txtsize=19&txt=200%C3%97200&w=200&h=200';
 
 const styles = StyleSheet.create({
   menu: {
